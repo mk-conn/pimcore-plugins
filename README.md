@@ -1,0 +1,4 @@
+pimcore-plugins
+===============
+
+Pimcore Plugins
