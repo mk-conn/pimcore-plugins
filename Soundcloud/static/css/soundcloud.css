@@ -1,0 +1,6 @@
+.soundcloud-button-icon {
+	background: url(/plugins/Soundcloud/static/img/soundcloud_button_icon_small.png) left center no-repeat !important;
+}
+.soundcloud-window .x-panel-bwrap {
+	padding: 10px;
+}

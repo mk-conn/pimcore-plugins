@@ -1,0 +1,57 @@
+How to use in Pimcore
+
+* add a new content block in your blocks folder like so (depends on where your blocks reside):
+		/website/views/scripts/default/blocks/soundcloud.php
+  whith the following content:
+
+<?php if($this->editmode) : ?>
+
+<?php print $this->message ?>
+
+<?php
+	print $this->select(
+			'soundcloudblock',
+			array(
+				'store' => array(
+					array('tracks', 'Show tracks on soundcloud'),
+					array('dropbox', 'Show Dropbox')
+				),
+				"onchange" => "editWindow.reload.bind(editWindow)"
+			)
+		);
+?>
+<?php endif; ?>
+
+<?php if($this->editmode):?>
+	<h4>Username on soundcloud:</h4>
+	<?php print $this->input('username', array('width' => 200)); ?>
+<?php endif; ?>
+
+<?php if($this->editmode):?>
+	<h4>Title (for dropbox only):</h4>
+	<?php print $this->input('title', array('width' => 200)); ?>
+<?php endif; ?>
+
+<?php
+	$action = $this->select("soundcloudblock")->getData();
+	$params = array(
+		'username'	=> $this->input('username')->getData(),
+		'title'		=> $this->input('title')->getData()
+	);
+	if($action) {
+		print $this->action($action, 'frontend', 'Soundcloud', $params);
+	}
+?>
+
+* in your default view script (or whereever you want add the soundcloud block) add following:
+
+<?php print $this->select("blocktype",
+		array(
+			"store" => array(
+				array('soundcloud', 'Soundcloud')
+			),
+			"onchange" => "editWindow.reload.bind(editWindow)"
+		)
+	);
+?>
+

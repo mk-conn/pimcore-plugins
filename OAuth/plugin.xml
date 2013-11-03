@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+  <plugin>
+    <!-- unique identifier = folder name -->
+    <pluginName>OAuth</pluginName>
+    <pluginNiceName>OAuth</pluginNiceName>
+    <!-- 64 x 64 Pixel Icon -->
+    <pluginIcon>/plugins/OAuth/static/img/oauth.png</pluginIcon>
+    <pluginDescription>
+      <![CDATA[Provides OAuth capabilities]]>
+    </pluginDescription>
+    <pluginServer></pluginServer>
+    <!-- Version, revision and timestamp are updated by createRevision script at check in to plugin server!-->
+    <pluginVersion>0.0.2</pluginVersion>
+    <pluginRevision>2</pluginRevision>
+    <pluginBuildTimestamp>1300919797</pluginBuildTimestamp>
+    <!-- content to include in pimcore admin in a iframe, if pluginIframeSrc is defined,
+     the options button is included and the iframe is shown in an extra tab -->
+    <pluginIframeSrc>/plugin/OAuth/admin/config</pluginIframeSrc>
+    <!-- className of the plugin which extends Pimcore_API_Plugin_Abstract-->
+    <pluginClassName>OAuth_Plugin</pluginClassName>
+    <!-- include paths relative to plugin-directory -->
+    <pluginIncludePaths>
+      <path>/OAuth/lib</path>
+      <path>/OAuth/models</path>
+    </pluginIncludePaths>
+    <!-- namespaces to register with autoloader-->
+    <pluginNamespaces>
+      <namespace>OAuth</namespace>
+    </pluginNamespaces>
+    <!-- js files needed for pimcore plugin (backend) with path relative to plugin-directory -->
+    <pluginJsPaths></pluginJsPaths>
+    <!-- css files needed for pimcore plugin (backend) with path relative to plugin-directory -->
+    <pluginCssPaths>
+		<path>/OAuth/static/css/admin.css</path>
+	</pluginCssPaths>
+  </plugin>
+</zend-config>
